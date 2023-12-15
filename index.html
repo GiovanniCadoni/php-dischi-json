@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dischi</title>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!--Axios-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--Vue-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!--Css custom-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="app">
+        <div class="ms_container">
+            <header class="ms_header">
+                <h1>In tendenza</h1>
+            </header>
+            <main>
+                <div class="ms_schedule row row-cols-3">
+                    <div v-for="(dischi) in dischiList" class="ms_card card col py-5 px-4 d-flex flex-column align-items-center">
+                        <img :src="`${dischi.poster}`" class="ms_image card-img-top text-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fs-3 fw-bolder text-white">{{ dischi.title }}</h5>
+                            <p class="fs-5 text-white">{{ dischi.author }}</p>
+                            <p class="fs-5 mb-0 fw-bolder text-white">{{ dischi.year }}</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!--Script custom-->
+    <script src="js/script.js"></script>
+</body>
+</html>
